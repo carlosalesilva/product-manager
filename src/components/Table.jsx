@@ -1,6 +1,6 @@
 import React from 'react'
 import { Table, Button } from 'reactstrap';
-import ModalForm from '../components/Modal'
+import EditModal from './EditModal'
 
 function DataTable(props){
   const deleteItem = id => {
@@ -35,7 +35,7 @@ function DataTable(props){
         <td>{item.hobby}</td>
         <td>
           <div style={{width:"110px"}}>
-            <ModalForm buttonLabel="Edit" item={item} updateState={props.updateState}/>
+            <EditModal buttonLabel="Edit" item={item} updateState={props.updateState}/>
             {' '}
             <Button color="danger" onClick={() => deleteItem(item.id)}>Del</Button>
           </div>
